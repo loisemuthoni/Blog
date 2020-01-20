@@ -12,7 +12,7 @@ class User(UserMixin,db.Model):
     password = db.Column(db.String(255), nullable=False)
     bio = db.Column(db.String(255))
     profile_pic_path = db.Column(db.String(255))
-    blogs = db.relationship('Blog', backref='blog',lazy=True)
+    blogs = db.relationship('Blog', backref='blogyou',lazy=True)
     comment = db.relationship('Comments', backref='commenting',lazy=True)
 
 
