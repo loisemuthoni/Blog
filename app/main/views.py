@@ -2,32 +2,31 @@ from flask import render_template, request, redirect, url_for, abort
 from . import main
 from app.models import User,Blog, Comments, Quotes, Subscribe
 from flask_login import login_user,login_required, logout_user,current_user
-from flask import request
+import requests
 from .. import mail, db,photos
 from ..email import mail_message
 from flask_mail import Message
 
 
-# response = request.get('http://quotes.stormconsultancy.co.uk/random.json')
-# quotes = response.json()
-# author = quotes.get('author')
-# quote = quotes.get('quote')
-# permalink = quotes.get('permalink')
-# quoty = Quotes(author,quote,permalink)
+response = requests.get('http://quotes.stormconsultancy.co.uk/random.json')
+quotes = response.json()
+author = quotes.get('author')
+quote = quotes.get('quote')
+permalink = quotes.get('permalink')
+quoty = Quotes(author,quote,permalink)
 
 
 @main.route('/')
 def home():
     title = "YUBlog"
-    # blogs = Blog.query.all()
-    # comment = Comments.query.all()
-    # quote = quoty
-    # print(quotes)
-    return render_template('index.html', title=title)
+    blogs = Blog.query.all()
+    comment = Comments.query.all()
+    quote = quoty
+    print(quotes)
+    return render_template('index.html', title=title,blogs=blogs,comment=comment, quote=quote)
 
-@login_required
 @main.route('/blogs', methods=['POST','GET'])
-
+@login_required
 def blogs():
     if request.method == 'POST':
         form = request.form
