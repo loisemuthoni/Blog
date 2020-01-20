@@ -1,4 +1,4 @@
 
 Hello {{user.email}}
 
-Thank you for subscribing to BlogYou.
+Thank you for subscribing to Blog.

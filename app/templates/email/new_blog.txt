@@ -3,4 +3,4 @@ A new blog has been created
 
 {{blog.title}}
 {{blog.blog}}
-{{blog.blogyou.username}}
+{{blog.blog.username}}
