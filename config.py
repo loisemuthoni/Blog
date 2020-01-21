@@ -1,7 +1,7 @@
 import os
-# from dotenv import load_dotenv
+from dotenv import load_dotenv
 
-# load_dotenv()
+load_dotenv()
 class Config:
     Debug = True
     SECRET_KEY= os.environ.get('SECRET_KEY')
@@ -18,10 +18,11 @@ class DevConfig(Config):
     Debug = True
     # SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_DATABASE_URI="postgresql+psycopg2://moringa:12345@localhost/blog"
-
-
+    Env = 'development'
+    
 class ProdConfig(Config):
-    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
-    SQLALCHEMY_DATABASE_URI="postgresql+psycopg2://moringa:12345@localhost/blog"
-
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    
 configurations = {"development":DevConfig, "production":ProdConfig}
+
+   
