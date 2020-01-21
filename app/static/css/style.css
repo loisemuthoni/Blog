@@ -1,25 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Boogaloo&display=swap');
 .container-fluid{
   background-color:black;
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Archivo Narrow', sans-serif;
   overflow-x: hidden;
 }
 .login{
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Archivo Narrow', sans-serif;
 }
 
 .signup{
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Archivo Narrow', sans-serif;
 
 }
 .blog{
-  font-family: 'Boogaloo', cursive;
-
+  font-family: 'Archivo Narrow', sans-serif;
 }
 .home{
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Archivo Narrow', sans-serif;
 
 }
 .profile{
-  font-family: 'Boogaloo', cursive;
+  font-family: 'Archivo Narrow', sans-serif;
 }

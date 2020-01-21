@@ -1,9 +1,9 @@
-from flask import render_template, request, redirect, url_for, abort
+from flask import render_template, request, redirect, url_for, abort, Blueprint
 from . import main
-from app.models import User,Blog, Comments, Quotes, Subscribe
+from app.models import User, Blog, Comments, Quotes, Subscribe
 from flask_login import login_user,login_required, logout_user,current_user
 import requests
-from .. import mail, db,photos
+from .. import mail, db
 from ..email import mail_message
 from flask_mail import Message
 
@@ -15,15 +15,18 @@ quote = quotes.get('quote')
 permalink = quotes.get('permalink')
 quoty = Quotes(author,quote,permalink)
 
+main = Blueprint("main", __name__)
+
 
 @main.route('/')
 def home():
-    title = "YUBlog"
+    title = "Blog"
     blogs = Blog.query.all()
+    print('jshshshshsh')
     comment = Comments.query.all()
     quote = quoty
     print(quotes)
-    return render_template('index.html', title=title,blogs=blogs,comment=comment, quote=quote)
+    return render_template('index.html', title=title, blogs=blogs,comment=comment, quote=quote)
 
 @main.route('/blogs', methods=['POST','GET'])
 @login_required
