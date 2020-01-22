@@ -7,7 +7,7 @@ from flask_uploads import UploadSet,configure_uploads
 
 app =  Flask(__name__)
 db = SQLAlchemy(app)
-mail = Mail(app)
+mail = Mail()
 login_manager = LoginManager(app)
 login_manager.login_view ='auth.login'
 login_manager.session_protection = "strong"
