@@ -33,6 +33,9 @@
 * Font Awesome 
 * jQuery 
 
+## Known Bugs
+* On creating a new post, a subscribed user wil receive a notification email. However, the page will display an error when redirecting the writer to the post page. This feature has been temporarily disabled due to this -- FIXED
+
 ## Contact
 - email: loisemburu01@gmail.com
 
